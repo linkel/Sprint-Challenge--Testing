@@ -1,6 +1,6 @@
 const express = require('express');
 
-const games = require('./data/gamesModel.spec.js/index.js');
+const games = require('./data/gamesModel.js');
 
 const server = express();
 
@@ -12,7 +12,7 @@ server.get('/', async (req, res) => {
 
 server.get('/games', async (req, res) => {
   const rows = await games.getAll();
-
+  console.log(rows);
   res.status(200).json(rows);
 });
 
