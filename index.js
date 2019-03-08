@@ -22,7 +22,6 @@ server.post('/games', async (req, res) => {
     res.status(422).json({message: "Please include name and genre in req.body"})
   } else {
     const send = await games.insert(game)
-    console.log(send)
     res.status(201).json(send)
   }
 })
