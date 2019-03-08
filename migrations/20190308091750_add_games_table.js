@@ -8,6 +8,5 @@ exports.up = function(knex, Promise) {
   };
   
   exports.down = function(knex, Promise) {
-    // undo the operation in up
     return knex.schema.dropTableIfExists('games');
   };
